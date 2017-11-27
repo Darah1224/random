@@ -1,14 +1,4 @@
-CXX = g++ -fPIC
-NETLIBS= -lnsl
-
-all: git-commit timer
-
-timer : timer.o
-	$(CXX) -o $@ $@.o $(NETLIBS)
-
-%.o: %.cc
-	@echo 'Building $@ from $<'
-	$(CXX) -o $@ -c -I. $<
+all: git-commit
 
 .PHONY: git-commit
 git-commit:
@@ -17,7 +7,4 @@ git-commit:
 	git commit -a -m 'Commit' >> .local.git.out || echo 
 	git push origin master	
 
-.PHONY: clean
-clean:
-	rm -f *.o timer
 
