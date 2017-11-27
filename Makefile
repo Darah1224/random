@@ -12,10 +12,10 @@ timer : timer.o
 
 .PHONY: git-commit
 git-commit:
-	git checkout
+	#git checkout
 	git add timer.cc Makefile >> .local.git.out  || echo
 	git commit -a -m 'Commit' >> .local.git.out || echo
-	git push origin master 
+	#git push origin master 
 
 .PHONY: clean
 clean:
