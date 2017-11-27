@@ -14,7 +14,7 @@ timer : timer.o
 git-commit:
 	git add timer.cc Makefile >> .local.git.out  || echo
 	git commit -a -m 'Commit' >> .local.git.out || echo 
-	git push -u origin master	
+	git push origin master	
 
 .PHONY: clean
 clean:
